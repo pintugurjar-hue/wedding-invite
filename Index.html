@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintu ❤️ Nikita – Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL RESET & BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        a { color: #d4af37; text-decoration: none; }
+        a:hover { color: #f5d742; }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, .gold { font-family: 'Playfair Display', serif; color: #d4af37; }
+        h1 { font-size: 3.5rem; letter-spacing: 2px; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+        h3 { font-size: 1.8rem; }
+        .couple-names { font-size: 4rem; margin: 1rem 0; }
+        .date { font-size: 1.6rem; letter-spacing: 4px; color: #aaa; }
+
+        /* ===== CONTAINER ===== */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 1px solid #2a2a2a;
+            padding: 2rem;
+        }
+        .hero .sub { font-size: 1.2rem; margin-top: 1rem; color: #888; }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        .countdown-item { text-align: center; }
+        .countdown-item span:first-child {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+        }
+        .countdown-item span:last-child { font-size: 0.9rem; color: #777; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #222;
+        }
+        section:last-of-type { border-bottom: none; }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+            margin: 0.5rem auto 0;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); }
+        .card h3 { margin-bottom: 1rem; font-size: 1.6rem; }
+        .card p { color: #b0b0b0; }
+
+        /* ===== IMAGE PLACEHOLDER ===== */
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+        .gallery-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ===== MAP ===== */
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            height: 350px;
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* ===== RSVP ===== */
+        .rsvp-form {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #2a2a2a;
+        }
+        .rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1rem;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #eee;
+            font-family: inherit;
+        }
+        .rsvp-form button {
+            background: #d4af37;
+            color: #0d0d0d;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .rsvp-form button:hover { background: #f5d742; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* ===== EDITABLE PLACEHOLDER ===== */
+        .editable { outline: none; }
+        .editable:focus { border-bottom: 1px dashed #d4af37; padding-bottom: 2px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .couple-names { font-size: 2.8rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <div class="container">
+        <p class="gold sub">✨ हम विवाह बंधन में बंध रहे हैं ✨</p>
+        <h1 class="couple-names editable" contenteditable="true">Pintu & Nikita</h1>
+        <p class="date editable" contenteditable="true">14 फरवरी, 2026 | मंगलवार</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item"><span id="days">00</span><span>दिन</span></div>
+            <div class="countdown-item"><span id="hours">00</span><span>घंटे</span></div>
+            <div class="countdown-item"><span id="minutes">00</span><span>मिनट</span></div>
+            <div class="countdown-item"><span id="seconds">00</span><span>सेकंड</span></div>
+        </div>
+        <p style="font-size: 1.1rem; color: #aaa;">शादी में आपका स्वागत है ❤️</p>
+    </div>
+</section>
+
+<!-- ========== WEDDING VENUE & DETAILS ========== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">📍 विवाह स्थल</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 class="editable" contenteditable="true">गार्डन पैलेस, इंदौर</h3>
+                <p class="editable" contenteditable="true">
+                    शाम 7:00 बजे से रात 11:00 बजे तक<br>
+                    मुख्य समारोह – 14 फरवरी 2026<br>
+                    भोजन एवं आतिशबाजी के साथ शानदार इंतजाम
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="editable" contenteditable="true">🚗 पार्किंग & पहुँच</h3>
+                <p class="editable" contenteditable="true">
+                    स्थल पर मुफ्त पार्किंग उपलब्ध<br>
+                    निकटतम रेलवे स्टेशन: इंदौर जंक्शन (5 कि.मी.)<br>
+                    एयरपोर्ट से 20 मिनट की दूरी
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WEDDING FUNCTIONS ========== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">🎊 फंक्शन शेड्यूल</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🌸 हल्दी समारोह</h3>
+                <p class="editable" contenteditable="true">12 फरवरी 2026, सुबह 10:00 बजे<br>परिवार के साथ हर्षोल्लास</p>
+            </div>
+            <div class="card">
+                <h3>💃 संगीत</h3>
+                <p class="editable" contenteditable="true">13 फरवरी 2026, रात 8:00 बजे<br>डीजे और डांस का धमाल</p>
+            </div>
+            <div class="card">
+                <h3>💍 मुख्य विवाह</h3>
+                <p class="editable" contenteditable="true">14 फरवरी 2026, शाम 7:00 बजे<br>फेरे और मंत्रोच्चार</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PRE-WEDDING MEMORIES ========== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">📸 प्री-वेडिंग मेमोरीज</h2>
+        <div class="grid-3">
+            <div class="gallery-img">
+                <img src="https://via.placeholder.com/400x250/1a1a1a/555?text=तस्वीर+1" alt="Memory 1">
+            </div>
+            <div class="gallery-img">
+                <img src="https://via.placeholder.com/400x250/1a1a1a/555?text=तस्वीर+2" alt="Memory 2">
+            </div>
+            <div class="gallery-img">
+                <img src="https://via.placeholder.com/400x250/1a1a1a/555?text=तस्वीर+3" alt="Memory 3">
+            </div>
+        </div>
+        <p style="text-align:center; margin-top: 1.5rem; color:#888;">(अपनी असली तस्वीरों से बदलने के लिए <code>src</code> एडिट करें)</p>
+    </div>
+</section>
+
+<!-- ========== GOOGLE MAPS ========== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">🗺️ Google Maps – स्थान</h2>
+        <div class="map-container">
+            <!-- EDIT: नीचे iframe के src में अपना Google Maps एम्बेड लिंक डालें -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.123456!2d75.8577!3d22.7196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzEwLjYiTiA3NcKwNTEnMjcuNyJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <p style="text-align:center; margin-top:1rem;">
+            <a href="https://maps.google.com/?q=गार्डन+पैलेस+इंदौर" target="_blank">📍 Google Maps में खोलें</a>
+        </p>
+    </div>
+</section>
+
+<!-- ========== RSVP ========== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">📩 RSVP – उपस्थिति की पुष्टि करें</h2>
+        <div class="rsvp-form">
+            <form action="https://formspree.io/f/your_form_id" method="POST">
+                <!-- Formspree का उपयोग कर रहे हैं – अपना Formspree ID ऊपर डालें -->
+                <input type="text" name="नाम" placeholder="आपका नाम *" required>
+                <input type="email" name="ईमेल" placeholder="ईमेल (वैकल्पिक)">
+                <input type="tel" name="फ़ोन" placeholder="फ़ोन नंबर *" required>
+                <select name="उपस्थिति">
+                    <option value="">कृपया चुनें</option>
+                    <option value="हाँ, आऊँगा/आऊँगी">हाँ, अवश्य आऊँगा/आऊँगी</option>
+                    <option value="नहीं आ पाऊँगा/पाऊँगी">क्षमा करें, नहीं आ पाऊँगा/पाऊँगी</option>
+                    <option value="शायद">अभी तय नहीं है</option>
+                </select>
+                <textarea name="संदेश" rows="3" placeholder="कोई खास संदेश?"></textarea>
+                <button type="submit">✅ पुष्टि करें</button>
+            </form>
+        </div>
+        <p style="text-align:center; margin-top:1rem; color:#888;">
+            (फ्री RSVP हेतु <a href="https://formspree.io" target="_blank">Formspree</a> पर खाता बनाएँ और ऊपर <code>action</code> में अपना ID डालें)
+        </p>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <p>❤️ इस प्यार भरे बंधन का हिस्सा बनने के लिए धन्यवाद | Pintu & Nikita</p>
+    <p style="margin-top:0.5rem;">काउंटडाउन शादी के दिन तक सक्रिय रहेगा | लिंक तब तक लाइव है जब तक होस्टिंग एक्टिव है</p>
+</footer>
+
+<script>
+    // ===== COUNTDOWN TIMER =====
+    // EDIT: अपनी शादी की तारीख और समय यहाँ सेट करें (YYYY-MM-DDTHH:MM:SS)
+    const weddingDate = new Date("2026-02-14T19:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+        if (diff <= 0) {
+            document.getElementById("countdown").innerHTML = "<p style='color:#d4af37;font-size:2rem;'>🎉 शादी का दिन आ चुका है! 🎉</p>";
+            return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (86400000)) / (3600000));
+        const minutes = Math.floor((diff % (3600000)) / 60000);
+        const seconds = Math.floor((diff % (60000)) / 1000);
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
+
